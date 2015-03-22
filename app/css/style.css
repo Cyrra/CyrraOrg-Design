@@ -266,6 +266,16 @@ html {
   background-color: #dad4d4;
   background-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(255,255,255,0.25) 1px, rgba(255,255,255,0.25) 3px);
 }
+html:before {
+  content: '';
+  width: 100%;
+  height: 600px;
+  background: url("../img/background.png") 40% top/auto 600px no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
 body {
   font-family: 'Muli', sans-serif;
   color: #312222;
@@ -291,19 +301,7 @@ body:after {
 }
 header {
   position: relative;
-  z-index: 0;
-}
-header:before {
-  content: '';
-  width: 100%;
-  height: 600px;
-  background-image: url("../img/background.png");
-  background-size: auto 600px;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
+  z-index: 2;
 }
 header .logo {
   background-color: transparent;

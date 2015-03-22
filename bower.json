@@ -1,7 +1,8 @@
 {
-    "name": "jeet package",
-    "version": "0.0.1",
-    "dependencies": {
-        "jquery": "~2.1.3"
-    }
+  "name": "jeet package",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "modernizr": "~2.8.3"
+  }
 }

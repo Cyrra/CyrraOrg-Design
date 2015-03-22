@@ -1,15 +1,220 @@
 @import 'jeet'
 @import 'rupture'
+@import 'normalize'
+/*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
 
-edit()
+html
+    color: #222
+    font-size: 1em
+    line-height: 1.4
 
-section
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection
+    background: #b3d4fc
+    text-shadow: none
+
+::selection
+    background: #b3d4fc
+    text-shadow: none
+
+/*
+ * A better looking default horizontal rule
+ */
+hr
+    display: block
+    height: 1px
+    border: 0
+    border-top: 1px solid #ccc
+    margin: 1em 0
+    padding: 0
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video
+    vertical-align: middle
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset
+    border: 0
+    margin: 0
+    padding: 0
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea
+    resize: vertical
+
+/* ==========================================================================
+ Author's custom styles
+ ========================================================================== */
+
+// edit()
+
+html
+    background-color #dad4d4
+    background-image repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(255,255,255,.25) 1px, rgba(255,255,255,.25) 3px)
+
+body
+    font-family 'Muli', sans-serif
+    color #312222
     center(960px)
-aside
-    col(1/4)
+    box-shadow 0 0 1em black
+    background-color #e8e3e3
+
+header
+    position relative
+    z-index 0
+    &:before
+        content ''
+        width 100%
+        height 600px
+        background-image url(../img/background.png)
+        background-size auto 600px
+        background-repeat no-repeat
+        position absolute
+        left 0
+        top 0
+        z-index -1
+
+    .logo
+        background-color  transparent
+        border  0
+        overflow  hidden
+        /* IE 6/7 fallback */
+        // *text-indent  -9999px
+        width 100%
+        height 120px
+        background-image url(../img/logo.png)
+        background-repeat no-repeat
+        background-size contain
+        position: relative;
+        left: 5em;
+        top: 2em;
+        margin 0
+        &:before
+            content ''
+            display block
+            width 0
+            height 100%
+
+    .motto
+        background-color rgba(255,255,255,0.25)
+        position relative
+        display inline-block
+        padding 0 0.25em
+        font-size 1em
+        top 2em
+        left 2em
+        &:before
+            content '['
+            left -0.15em
+        &:after
+            content ']'
+            right -0.15em
+        &:before,&:after
+            top -0.35em
+            font-size 1.8em
+            position absolute
+
 article
-    col(3/4)
-+below(700px)
-    aside, article
-        stack()
-        color blue
+    padding 2em 2em 2em 4em
+    p:nth-child(1)
+        span(1/2, offset:1/2)
+    p:nth-child(2)
+        span(4/5, offset:1/5)
+    p:nth-child(3)
+        span(9/10, offset:1/10)
+
+
+footer
+    background-color #312222
+    color #89D0D4
+    .socials li
+        display inline-block
+    input
+        background-color #e8e3e3
+
+/* ==========================================================================
+ Helper classes
+ ========================================================================== */
+/*
+* Hide visually and from screen readers:
+* http://juicystudio.com/article/screen-readers-display-none.php
+*/
+.hidden
+    display: none !important
+    visibility: hidden
+
+/*
+* Hide only visually, but have it available for screen readers:
+* http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*/
+.visuallyhidden
+    border: 0
+    clip: rect(0 0 0 0)
+    height: 1px
+    margin: -1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px
+
+/*
+* Extends the .visuallyhidden class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus
+    clip: auto
+    height: auto
+    margin: 0
+    overflow: visible
+    position: static
+    width: auto
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+.invisible
+    visibility: hidden
+
+/* ==========================================================================
+ EXAMPLE Media Queries for Responsive Design.
+ These examples override the primary ('mobile first') styles.
+ Modify as content requires.
+ ========================================================================== */
+
+// @media only screen and (min-width: 35em)
+/* Style adjustments for viewports that meet the condition */
+
+// @media print,
+//     (-o-min-device-pixel-ratio: 5/4),
+//     (-webkit-min-device-pixel-ratio: 1.25),
+//     (min-resolution: 120dpi)
+/* Style adjustments for high resolution devices */

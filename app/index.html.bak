@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html>
 
 <head>
     <script type="text/javascript">
@@ -59,7 +59,7 @@
             <input type="email">
         </p>
         <p>Suivez-nous sur les réseaux sociaux:</p>
-        <ul class="socials">
+        <ul>
             <li><a href="https://www.facebook.com/cyrra.org">Facebook</a></li>
             <li><a href="https://twitter.com/CyrraOrg">Twiter</a></li>
             <li><a href="https://plus.google.com/102799216789923698442">Google+</a></li>
@@ -67,8 +67,8 @@
     </footer>
     <!-- build:js js/scripts.min.js -->
     <!-- bower:js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bower-webfontloader/webfont.js"></script>
     <!-- endbower -->
     <script src="js/script.js"></script>
     <!-- endbuild -->

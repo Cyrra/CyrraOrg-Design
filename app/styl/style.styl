@@ -76,29 +76,15 @@ textarea
 // edit()
 
 html
-    background-color #dad4d4
-    background-image repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(255,255,255,.25) 1px, rgba(255,255,255,.25) 3px)
-    &:before
-        content ''
-        width 100%
-        height 600px
-        background url(../img/background.png) 40% top / auto 600px no-repeat
-        position absolute
-        left 0
-        top 0
-        z-index 1
+    background-color #89D0D4
+    font-family 'Muli', sans-serif
+    color #312222
 
 body
     min-height 100vh
-    font-family 'Muli', sans-serif
-    color #312222
-    center(960px)
-    box-shadow 0 0 1em black
-    background-color #e8e3e3
 
 header
-    position relative
-    z-index 2
+    center(960px)
 
     .logo
         background-color  transparent
@@ -106,7 +92,7 @@ header
         overflow  hidden
         /* IE 6/7 fallback */
         // *text-indent  -9999px
-        width 100%
+        width 448px
         height 120px
         background-image url(../img/logo.png)
         background-repeat no-repeat
@@ -115,11 +101,19 @@ header
         left: 5em;
         top: 2em;
         margin 0
-        &:before
+        &::before,&::after
             content ''
             display block
-            width 0
             height 100%
+        &::before
+            width 0
+        &::after
+            width 5em
+            position absolute
+            right 0
+            top 0
+            background-color #312222
+            z-index -2
 
     .motto
         background-color rgba(255,255,255,0.25)
@@ -129,32 +123,37 @@ header
         font-size 1em
         top 2em
         left 2em
-        &:before
+        &::before
             content '['
             left -0.15em
-        &:after
+        &::after
             content ']'
             right -0.15em
-        &:before,&:after
+        &::before,&::after
             top -0.35em
             font-size 1.8em
             position absolute
 
-article
-    padding 2em 2em 2em 4em
-    p:nth-child(1)
-        span(1/2, offset:1/2)
-    p:nth-child(2)
-        span(4/5, offset:1/5)
-    p:nth-child(3)
-        span(9/10, offset:1/10)
+main
+    center(960px)
+    padding 2em
 
+    section:nth-child(1)
+        column(1/2)
+    section:nth-child(2)
+        column(1/2, offset:1/2)
+    section:nth-child(3)
+        column(1/2)
 
 footer
-    padding 2em
     background-color #312222
-    color #89D0D4
-    h3
+
+    div
+        center(960px)
+        padding 2em
+        color #89D0D4
+
+    h1
         text-align center
     input
         background-color #e8e3e3

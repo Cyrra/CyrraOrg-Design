@@ -277,6 +277,7 @@ html:before {
   z-index: 1;
 }
 body {
+  min-height: 100vh;
   font-family: 'Muli', sans-serif;
   color: #312222;
   *zoom: 1;
@@ -402,14 +403,18 @@ article p:nth-child(3):after {
   clear: both;
 }
 footer {
+  padding: 2em;
   background-color: #312222;
   color: #89d0d4;
 }
-footer .socials li {
-  display: inline-block;
+footer h3 {
+  text-align: center;
 }
 footer input {
   background-color: #e8e3e3;
+}
+footer .socials li {
+  display: inline-block;
 }
 /* ==========================================================================
  Helper classes

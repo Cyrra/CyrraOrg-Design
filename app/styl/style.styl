@@ -76,9 +76,15 @@ textarea
 // edit()
 
 html
-    background-color #89D0D4
+    // background-color #89D0D4
     font-family 'Muli', sans-serif
     color #312222
+    background      radial-gradient(circle at 100% 10% , rgba(#111C1F, 0.8), rgba(#111C1F, 0)) repeat scroll 0% 0%,
+                    radial-gradient(circle at 50% 50% , #89D0D4, rgba(#89D0D4, 0)) repeat scroll 0% 0%,
+                    radial-gradient(circle at 00% 20% , rgba(#D0EBEE, 0.5), rgba(#D0EBEE, 0)) repeat scroll 0% 0%,
+                    #89D0D4
+
+// radial-gradient(circle at 50% 0% , rgba(#111C1F, 0.8), rgba(#111C1F, 0)) repeat scroll 0% 0%,
 
 body
     min-height 100vh
@@ -101,19 +107,11 @@ header
         left: 5em;
         top: 2em;
         margin 0
-        &::before,&::after
+        &::before
             content ''
             display block
             height 100%
-        &::before
             width 0
-        &::after
-            width 5em
-            position absolute
-            right 0
-            top 0
-            background-color #312222
-            z-index -2
 
     .motto
         background-color rgba(255,255,255,0.25)
@@ -138,23 +136,23 @@ main
     center(960px)
     padding 2em
 
-    section:nth-child(1)
-        column(1/2)
-    section:nth-child(2)
-        column(1/2, offset:1/2)
-    section:nth-child(3)
-        column(1/2)
+    section
+        for row in 1 2 3
+            &:nth-child({row})
+                if row % 2
+                    column(1/2)
+                else
+                    column(1/2, offset:1/2)
 
 footer
     background-color #312222
+    text-align center
 
     div
         center(960px)
         padding 2em
         color #89D0D4
 
-    h1
-        text-align center
     input
         background-color #e8e3e3
     .socials li

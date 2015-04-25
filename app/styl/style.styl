@@ -12,9 +12,9 @@
    ========================================================================== */
 
 html
-    color: #222
-    font-size: 1em
-    line-height: 1.4
+	color: #222
+	font-size: 1em
+	line-height: 1.4
 
 /*
  * Remove text-shadow in selection highlight:
@@ -24,23 +24,23 @@ html
  * Customize the background color to match your design.
  */
 ::-moz-selection
-    background: #b3d4fc
-    text-shadow: none
+	background: #b3d4fc
+	text-shadow: none
 
 ::selection
-    background: #b3d4fc
-    text-shadow: none
+	background: #b3d4fc
+	text-shadow: none
 
 /*
  * A better looking default horizontal rule
  */
 hr
-    display: block
-    height: 1px
-    border: 0
-    border-top: 1px solid #ccc
-    margin: 1em 0
-    padding: 0
+	display: block
+	height: 1px
+	border: 0
+	border-top: 1px solid #ccc
+	margin: 1em 0
+	padding: 0
 
 /*
  * Remove the gap between audio, canvas, iframes,
@@ -53,21 +53,21 @@ iframe,
 img,
 svg,
 video
-    vertical-align: middle
+	vertical-align: middle
 
 /*
  * Remove default fieldset styles.
  */
 fieldset
-    border: 0
-    margin: 0
-    padding: 0
+	border: 0
+	margin: 0
+	padding: 0
 
 /*
  * Allow only vertical resizing of textareas.
  */
 textarea
-    resize: vertical
+	resize: vertical
 
 /* ==========================================================================
  Author's custom styles
@@ -75,88 +75,116 @@ textarea
 
 // edit()
 
+* + *
+	margin-top 1.5em
+
 html
-    // background-color #89D0D4
-    font-family 'Muli', sans-serif
-    color #312222
-    background      radial-gradient(circle at 100% 10% , rgba(#111C1F, 0.8), rgba(#111C1F, 0)) repeat scroll 0% 0%,
-                    radial-gradient(circle at 50% 50% , #89D0D4, rgba(#89D0D4, 0)) repeat scroll 0% 0%,
-                    radial-gradient(circle at 00% 20% , rgba(#D0EBEE, 0.5), rgba(#D0EBEE, 0)) repeat scroll 0% 0%,
-                    #89D0D4
+	// background-color #89D0D4
+	font-family 'Muli', sans-serif
+	font-size 1.15em
+	color #312222
+	background      radial-gradient(circle at 100% 10% , rgba(#111C1F, 0.8), rgba(#111C1F, 0)) repeat scroll 0% 0%,
+					radial-gradient(circle at 50% 50% , #89D0D4, rgba(#89D0D4, 0)) repeat scroll 0% 0%,
+					radial-gradient(circle at 00% 20% , rgba(#D0EBEE, 0.5), rgba(#D0EBEE, 0)) repeat scroll 0% 0%,
+					#89D0D4
 
 // radial-gradient(circle at 50% 0% , rgba(#111C1F, 0.8), rgba(#111C1F, 0)) repeat scroll 0% 0%,
 
 body
-    min-height 100vh
+	min-height 100vh
 
 header
-    center(960px)
+	center(960px)
+	margin-bottom 3em
 
-    .logo
-        background-color  transparent
-        border  0
-        overflow  hidden
-        /* IE 6/7 fallback */
-        // *text-indent  -9999px
-        width 448px
-        height 120px
-        background-image url(../img/logo.png)
-        background-repeat no-repeat
-        background-size contain
-        position: relative;
-        left: 5em;
-        top: 2em;
-        margin 0
-        &::before
-            content ''
-            display block
-            height 100%
-            width 0
+	.logo
+		background-color  transparent
+		border 0
+		overflow  hidden
+		/* IE 6/7 fallback */
+		// *text-indent  -9999px
+		width 448px
+		height 120px
+		background-image url(../img/logo.png)
+		background-repeat no-repeat
+		background-size contain
+		position: relative;
+		left 5em
+		top 2em
+		margin 0
+		&::before
+			content ''
+			display block
+			height 100%
+			width 0
 
-    .motto
-        background-color rgba(255,255,255,0.25)
-        position relative
-        display inline-block
-        padding 0 0.25em
-        font-size 1em
-        top 2em
-        left 2em
-        &::before
-            content '['
-            left -0.15em
-        &::after
-            content ']'
-            right -0.15em
-        &::before,&::after
-            top -0.35em
-            font-size 1.8em
-            position absolute
+	.motto
+		background-color rgba(255,255,255,0.25)
+		position relative
+		display inline-block
+		padding 0 0.25em
+		font-size 1em
+		top 2em
+		left 2em
+		&::before
+			content '['
+			left -0.15em
+		&::after
+			content ']'
+			right -0.15em
+		&::before,&::after
+			top -0.35em
+			font-size 1.8em
+			position absolute
 
 main
-    center(960px)
-    padding 2em
+	center(960px)
+	text-shadow 0 2px 3px #70A3A7
 
-    section
-        for row in 1 2 3
-            &:nth-child({row})
-                if row % 2
-                    column(1/2)
-                else
-                    column(1/2, offset:1/2)
+	section
+		for row in 1 2
+			&:nth-child({row})
+				if row % 2
+					column(1/2, offset:-1/2)
+				else
+					column(1/2, offset:1/2)
+
+	section:nth-child(3)
+		span(1)
+		ol
+			padding 0
+			list-style none
+		li
+			cf()
+			&::before
+				text-align center
+				column(1/10)
+				font-size 2em
+			&:nth-child(1)::before
+				content '①'
+			&:nth-child(2)::before
+				content '②'
+			&:nth-child(3)::before
+				content '③'
+			p
+				column(5/10)
+		img
+			max-width 100%
+			column(4/10)
 
 footer
-    background-color #312222
-    text-align center
+	background-color #312222
+	text-align center
 
-    div
-        center(960px)
-        padding 2em
-        color #89D0D4
+	div
+		center(960px)
+		padding 2em
+		color #89D0D4
 
-    input
-        background-color #e8e3e3
-    .socials li
-        display inline-block
+	input
+		background-color #e8e3e3
+	.socials li
+		display inline-block
 
 /* ==========================================================================
  Helper classes
@@ -166,22 +194,22 @@ footer
 * http://juicystudio.com/article/screen-readers-display-none.php
 */
 .hidden
-    display: none !important
-    visibility: hidden
+	display: none !important
+	visibility: hidden
 
 /*
 * Hide only visually, but have it available for screen readers:
 * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 */
 .visuallyhidden
-    border: 0
-    clip: rect(0 0 0 0)
-    height: 1px
-    margin: -1px
-    overflow: hidden
-    padding: 0
-    position: absolute
-    width: 1px
+	border: 0
+	clip: rect(0 0 0 0)
+	height: 1px
+	margin: -1px
+	overflow: hidden
+	padding: 0
+	position: absolute
+	width: 1px
 
 /*
 * Extends the .visuallyhidden class to allow the element
@@ -190,18 +218,18 @@ footer
 */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus
-    clip: auto
-    height: auto
-    margin: 0
-    overflow: visible
-    position: static
-    width: auto
+	clip: auto
+	height: auto
+	margin: 0
+	overflow: visible
+	position: static
+	width: auto
 
 /*
 * Hide visually and from screen readers, but maintain layout
 */
 .invisible
-    visibility: hidden
+	visibility: hidden
 
 /* ==========================================================================
  EXAMPLE Media Queries for Responsive Design.

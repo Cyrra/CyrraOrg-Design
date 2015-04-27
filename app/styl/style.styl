@@ -75,6 +75,8 @@ textarea
 
 // edit()
 
+
+
 * + *
 	margin-top 1.5em
 
@@ -83,10 +85,11 @@ html
 	font-family 'Muli', sans-serif
 	font-size 1.15em
 	color #312222
-	background      radial-gradient(circle at 100% 10% , rgba(#111C1F, 0.8), rgba(#111C1F, 0)) repeat scroll 0% 0%,
-					radial-gradient(circle at 50% 50% , #89D0D4, rgba(#89D0D4, 0)) repeat scroll 0% 0%,
-					radial-gradient(circle at 00% 20% , rgba(#D0EBEE, 0.5), rgba(#D0EBEE, 0)) repeat scroll 0% 0%,
-					#89D0D4
+	background  		    radial-gradient(circle at 100% 10% , rgba(#2d3637, 0.8), rgba(#2d3637, 0)),
+							radial-gradient(circle at 100% 20% , rgba(#87d7db, 0.5), rgba(#87d7db, 0)),
+							radial-gradient(circle at 50% 50% , #89D0D4, rgba(#89D0D4, 0)),
+							#87d7db
+	mix-blend-mode:			normal
 
 // radial-gradient(circle at 50% 0% , rgba(#111C1F, 0.8), rgba(#111C1F, 0)) repeat scroll 0% 0%,
 
@@ -96,6 +99,18 @@ body
 header
 	center(960px)
 	margin-bottom 3em
+	position relative
+
+	&::before
+		background		url(../images/main.jpg) no-repeat
+		mix-blend-mode	multiply
+		content ''
+		width 363px
+		height 404px
+		position absolute
+		left -11em
+		top -2em
+		opacity 0.55
 
 	.logo
 		background-color  transparent
@@ -105,7 +120,7 @@ header
 		// *text-indent  -9999px
 		width 448px
 		height 120px
-		background-image url(../img/logo.png)
+		background-image url(../images/logo.png)
 		background-repeat no-repeat
 		background-size contain
 		position: relative;

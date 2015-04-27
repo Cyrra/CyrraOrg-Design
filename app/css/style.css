@@ -269,7 +269,8 @@ html {
   font-family: 'Muli', sans-serif;
   font-size: 1.15em;
   color: #312222;
-  background: radial-gradient(circle at 100% 10%, rgba(17,28,31,0.8), rgba(17,28,31,0)) repeat scroll 0% 0%, radial-gradient(circle at 50% 50%, #89d0d4, rgba(137,208,212,0)) repeat scroll 0% 0%, radial-gradient(circle at 0% 20%, rgba(208,235,238,0.5), rgba(208,235,238,0)) repeat scroll 0% 0%, #89d0d4;
+  background: radial-gradient(circle at 100% 10%, rgba(45,54,55,0.8), rgba(45,54,55,0)), radial-gradient(circle at 100% 20%, rgba(135,215,219,0.5), rgba(135,215,219,0)), radial-gradient(circle at 50% 50%, #89d0d4, rgba(137,208,212,0)), #87d7db;
+  mix-blend-mode: normal;
 }
 body {
   min-height: 100vh;
@@ -285,6 +286,7 @@ header {
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 3em;
+  position: relative;
 }
 header:before,
 header:after {
@@ -294,6 +296,17 @@ header:after {
 header:after {
   clear: both;
 }
+header::before {
+  background: url("../images/main.jpg") no-repeat;
+  mix-blend-mode: multiply;
+  content: '';
+  width: 363px;
+  height: 404px;
+  position: absolute;
+  left: -11em;
+  top: -2em;
+  opacity: 0.55;
+}
 header .logo {
   background-color: transparent;
   border: 0;
@@ -301,7 +314,7 @@ header .logo {
 /* IE 6/7 fallback */
   width: 448px;
   height: 120px;
-  background-image: url("../img/logo.png");
+  background-image: url("../images/logo.png");
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;

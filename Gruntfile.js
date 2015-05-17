@@ -40,15 +40,59 @@ module.exports = function(grunt) {
                 src: ['<%= dist %>/*']
             },
         },
+
         copy: {
             dist: {
                 files: [{
                     expand: true,
                     cwd:'<%= app %>/',
-                    src: ['images/**', 'fonts/**', '**/*.html', '!**/*.styl', '!bower_components/**'],
+                    src: ['fonts/**', '**/*.html', '!**/*.styl', '!bower_components/**'],
                     dest: '<%= dist %>/'
                 }]
             },
+        },
+
+        image: {
+            static: {
+                options: {
+                    pngquant: true,
+                    optipng: false,
+                    advpng: false,
+                    zopflipng: false,
+                    pngcrush: false,
+                    pngout: false,
+                    mozjpeg: true,
+                    jpegRecompress: false,
+                    jpegoptim: false,
+                    gifsicle: false,
+                    svgo: false
+                },
+                files: {
+                    'dist/images/main.png': 'app/images/main.png',
+                    'dist/images/main.jpg': 'app/images/main.jpg'
+                }
+            },
+            dynamic: {
+                options: {
+                    pngquant: true,
+                    optipng: false,
+                    advpng: false,
+                    zopflipng: false,
+                    pngcrush: false,
+                    pngout: false,
+                    mozjpeg: true,
+                    jpegRecompress: false,
+                    jpegoptim: false,
+                    gifsicle: false,
+                    svgo: false
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'app/images',
+                    src: ['**/*.{png,jpg,gif,svg}'],
+                    dest: 'dist/images'
+                }]
+            }
         },
 
         uglify: {
@@ -127,6 +171,6 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['compile-stylus', 'bower-install', 'connect:app', 'watch']);
     grunt.registerTask('validate-js', ['jshint']);
     grunt.registerTask('server-dist', ['connect:dist']);
-    grunt.registerTask('publish', ['compile-stylus', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin']);
+    grunt.registerTask('publish', ['compile-stylus', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'image:dynamic', 'concat', 'cssmin', 'uglify', 'usemin']);
 
 };

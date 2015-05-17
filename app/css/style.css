@@ -543,8 +543,91 @@ footer > div:after {
 footer input {
   background-color: #e8e3e3;
 }
+footer .socials {
+  list-style: none;
+}
 footer .socials li {
-  display: inline-block;
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.3333333333333%;
+  margin-left: 0%;
+  margin-right: 3%;
+  margin-top: 0;
+}
+footer .socials li:before,
+footer .socials li:after {
+  content: '';
+  display: table;
+}
+footer .socials li:after {
+  clear: both;
+}
+footer .socials li:last-child {
+  margin-right: 0%;
+}
+footer .twitter iframe {
+  width: auto;
+}
+footer .twitter iframe .timeline {
+  border-radius: 0;
+}
+#mc_embed_signup {
+  *zoom: 1;
+}
+#mc_embed_signup:before,
+#mc_embed_signup:after {
+  content: '';
+  display: table;
+}
+#mc_embed_signup:after {
+  clear: both;
+}
+#mce-EMAIL {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 79.4%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+#mce-EMAIL:before,
+#mce-EMAIL:after {
+  content: '';
+  display: table;
+}
+#mce-EMAIL:after {
+  clear: both;
+}
+#mce-EMAIL:last-child {
+  margin-right: 0%;
+}
+#mc_embed_signup .clear {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 17.6%;
+  margin-left: 0%;
+  margin-right: 3%;
+  margin-top: 0;
+}
+#mc_embed_signup .clear:before,
+#mc_embed_signup .clear:after {
+  content: '';
+  display: table;
+}
+#mc_embed_signup .clear:after {
+  clear: both;
+}
+#mc_embed_signup .clear:last-child {
+  margin-right: 0%;
+}
+#mc_embed_signup input.button {
+  width: 100%;
+  padding: 0.3em;
 }
 /* ==========================================================================
  Helper classes

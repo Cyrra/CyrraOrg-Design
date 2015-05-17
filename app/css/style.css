@@ -519,7 +519,7 @@ footer {
   background-color: #312222;
   text-align: center;
 }
-footer div {
+footer > div {
   *zoom: 1;
   width: auto;
   max-width: 960px;
@@ -532,12 +532,12 @@ footer div {
   padding: 2em;
   color: #89d0d4;
 }
-footer div:before,
-footer div:after {
+footer > div:before,
+footer > div:after {
   content: '';
   display: table;
 }
-footer div:after {
+footer > div:after {
   clear: both;
 }
 footer input {
